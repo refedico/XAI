@@ -1,1 +1,23 @@
 daje
+### Code
+# Caricamento del dataset Iris
+iris = load_iris()
+X_train, X_test, y_train, y_test = train_test_split(iris.data, iris.target, random_state=42)
+
+# Addestramento del classificatore di alberi decisionali
+clf = DecisionTreeClassifier()
+clf.fit(X_train, y_train)
+
+# Creazione di un esplicatore LIME per spiegare le previsioni del classificatore
+explainer = lime.lime_tabular.LimeTabularExplainer(X_train, feature_names=iris.feature_names, class_names=iris.target_names)
+
+# Seleziona un'istanza di test da spiegare
+instance_idx = 0
+instance = X_test[instance_idx]
+
+# Spiega la previsione del classificatore per l'istanza selezionata
+explanation = explainer.explain_instance(instance, clf.predict_proba)
+
+# Stampa la spiegazione
+print("Spiegazione per l'istanza di test", instance_idx)
+print(explanation.as_list())
