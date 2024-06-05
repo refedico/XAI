@@ -1,4 +1,4 @@
-### code
+````python
 iris = load_iris()
 X_train, X_test, y_train, y_test = train_test_split(iris.data, iris.target, random_state=42)
 
@@ -14,3 +14,4 @@ explanation = explainer.explain_instance(instance, clf.predict_proba)
 
 print("Spiegazione per l'istanza di test", instance_idx)
 print(explanation.as_list())
+````
