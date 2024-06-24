@@ -28,6 +28,7 @@ To run this project, you need to have Python installed along with the necessary 
 
 ```bash
 pip install -r requirements.txt
+```
 
 
 ## Contributing
