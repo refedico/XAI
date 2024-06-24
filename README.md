@@ -26,10 +26,9 @@ LIME is used to generate local surrogate models that approximate the predictions
 
 To run this project, you need to have Python installed along with the necessary libraries. You can install the required libraries using the following command:
 
-'''bash
-
+```bash
 pip install -r requirements.txt
-'''
+
 
 ## Contributing
 
